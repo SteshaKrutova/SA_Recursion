@@ -1,27 +1,43 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
+// using System.ComponentModel.DataAnnotations;
+// using System.Runtime.CompilerServices;
 
-Console.WriteLine("Hello, World!");
-// Задача 1: Задайте значения M и N. 
-// Напишите программу, которая выведет все натуральные числа в промежутке от M до N. Использовать рекурсию, не использовать циклы.
-void OutputMtoN (int M, int N){
+// Console.WriteLine("Hello, World!");
+// // Задача 1: Задайте значения M и N. 
+// // Напишите программу, которая выведет все натуральные числа в промежутке от M до N. Использовать рекурсию, не использовать циклы.
+
+void OutputMtoN(){
+    Console.WriteLine("Please, write two numbers.");
+    Console.Write("M: ");
+    int M = Convert.ToInt32(Console.ReadLine());
+    Console.Write("N: ");
+    int N = Convert.ToInt32(Console.ReadLine());
+    Console.Write("The result of your function: ");
+    MtoN(M,N);
+    void MtoN (int M, int N){
     if (M<N){
-        Console.WriteLine(M+" ");
-        OutputMtoN(M+1,N);
+        Console.Write(M+" ");
+        MtoN(M+1,N);
     }
     else if (M>N){
-        Console.WriteLine(M+" ");
-        OutputMtoN(M-1,N);
+        Console.Write(M+" ");
+        MtoN(M-1,N);
     }
-    else  Console.WriteLine(N);
+    else  Console.Write(N);
+}
 }
 
-OutputMtoN(5,5);
+// //Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
-//Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
-
-int A (int m, int n){
+void AkkermanFunction(){
+    Console.WriteLine("Please, print m and n.");
+    Console.Write("m: ");
+    int m = Convert.ToInt32(Console.ReadLine());
+    Console.Write("n: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+    Console.Write("The result of your function: ");
+    Console.WriteLine(A(m,n));
+    int A ( int m, int n){
     if (m==0){
         return (n+1);
     }
@@ -33,21 +49,37 @@ int A (int m, int n){
     }
 
 }
-Console.WriteLine(A (3,1));
+}
 
-//Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
+// //Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
 
-String str = "Iwonttoeat";
-
-void Array(string str){
+void Array(){
+Console.Write("Please, print something: ");
+string str = Console.ReadLine();
+if (str == ""){
+    Console.WriteLine("Please, write something!!!");
+    Array();
+}
+else{
 int i = str.Length-1;
+Console.WriteLine("Your array: ");
 ArrayOutput(str,i);
  void ArrayOutput(string str, int i){
     if (i>=0){
-        Console.Write(str[i]);
+        Console.Write(str[i]+"\n");
         ArrayOutput(str,i-1);
     }
 }
 }
+}
 
-Array(str);
+void main(){
+    OutputMtoN();
+    Console.WriteLine();
+    Console.WriteLine();
+    AkkermanFunction();
+    Console.WriteLine();
+    Array();
+}
+
+main();
