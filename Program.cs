@@ -1,11 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-// using System.ComponentModel.DataAnnotations;
-// using System.Runtime.CompilerServices;
-
-// Console.WriteLine("Hello, World!");
-// // Задача 1: Задайте значения M и N. 
+﻿// // Задача 1: Задайте значения M и N. 
 // // Напишите программу, которая выведет все натуральные числа в промежутке от M до N. Использовать рекурсию, не использовать циклы.
 
+//This function outputs numbers from M to N. Function OutputMtoN for beautiful and conveniences, funcrion MtoN for recursion.
 void OutputMtoN(){
     Console.WriteLine("Please, write two numbers.");
     Console.Write("M: ");
@@ -29,6 +25,8 @@ void OutputMtoN(){
 
 // //Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
+//This function for calculations function of Akkerman. The function AkkermanFunction for beautifun and conveniences,
+// function A for recursion.
 void AkkermanFunction(){
     Console.WriteLine("Please, print m and n.");
     Console.Write("m: ");
@@ -53,6 +51,8 @@ void AkkermanFunction(){
 
 // //Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
 
+//This function for output of array elements begginning with end. The function Array for beautiful, conveniec and recursion; 
+// ArrayOutput for recursion.
 void Array(){
 Console.Write("Please, print something: ");
 string str = Console.ReadLine();
@@ -73,6 +73,7 @@ ArrayOutput(str,i);
 }
 }
 
+//This function for output all functions.
 void main(){
     OutputMtoN();
     Console.WriteLine();
